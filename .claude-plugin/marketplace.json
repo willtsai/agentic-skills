@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "willtsai-agentic-skills",
+  "owner": {
+    "name": "Will Tsai"
+  },
+  "metadata": {
+    "description": "Curated agentic skill packs for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "product-cabinet",
+      "description": "An accountable product-executive orchestrator with on-demand cross-functional capabilities and independent governance",
+      "source": "./product-cabinet"
+    }
+  ]
+}
