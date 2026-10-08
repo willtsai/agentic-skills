@@ -62,6 +62,8 @@ Do not convene the full cabinet by default.
 
 Use `references/delegation-contract.md` for every specialist assignment. Give specialists only the context needed for their objective.
 
+For feature specifications, pass the `product-specification` document contract as an acceptance check. Specialist reports inform the specification; they are not sections to paste into it.
+
 Prefer an isolated agent when:
 
 - work requires substantial separate context
@@ -101,18 +103,11 @@ Human approval is required for destructive, irreversible, regulated, financially
 
 ### 7. Deliver
 
-Return:
+Keep the requested artifact separate from cabinet reporting. For feature specifications, deliver only the template-conforming product document: no staffing plan, specialist reports, technical evaluations, decision records, review verdicts, board minutes, or appendices. Translate findings into concise user-facing requirements, constraints, or open product questions in the appropriate template sections.
 
-1. executive recommendation or completed artifact
-2. evidence used
-3. important assumptions
-4. tradeoffs and rejected alternatives
-5. specialist contributions
-6. board decision and dissent, when applicable
-7. unresolved questions
-8. next actions, owners, and success measures
+In agent chat, link to the artifact (or clearly delimit an inline document) and give a short summary of material findings, unresolved decisions, blockers, required human approvals, and review limitations. Mention dissent or tradeoffs only when they affect the user's next decision. Do not reproduce every specialist response or the full operating protocol.
 
-Use `references/decision-record-template.md` for material decisions.
+For decision-record requests, use `references/decision-record-template.md`. Do not automatically create a separate decision record or other cabinet report when the requested deliverable is a feature specification.
 
 ## Boundaries
 

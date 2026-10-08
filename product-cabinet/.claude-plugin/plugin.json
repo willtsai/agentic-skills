@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "product-cabinet",
   "description": "An accountable product-executive orchestrator with on-demand cross-functional capabilities and independent governance",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Will Tsai"
   }

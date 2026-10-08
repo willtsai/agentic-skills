@@ -82,6 +82,8 @@ A vote count is evidence of board sentiment, not a substitute for synthesis.
 
 ## Output
 
+When reviewing a feature specification, keep this board report separate from the spec. Return it to the orchestrator for a concise chat summary; do not append votes, conditions, dissent, or approval records to the product document. Only resulting product scope, experience constraints, or unresolved product questions may be reflected in the appropriate template sections.
+
 Use `references/board-review-template.md` without omitting:
 
 - evidence limitations

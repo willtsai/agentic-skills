@@ -184,7 +184,7 @@ Marketplace manifests are host-specific distribution adapters. The skills themse
 4. Each specialist receives a bounded [delegation contract](./skills/product-ceo/references/delegation-contract.md).
 5. The Product CEO reconciles evidence and disagreements into one accountable recommendation.
 6. Material decisions receive an independent `board-review`.
-7. The final response identifies evidence, assumptions, decisions, dissent, and next actions.
+7. The final chat response briefly summarizes material findings and next decisions, separately from the requested artifact.
 
 The Product CEO should apply a skill directly for bounded procedural work and use an isolated agent when work needs substantial separate context, parallel execution, distinct tools, or independent judgment.
 
@@ -237,8 +237,8 @@ Use a specialist without the Product CEO when the task is bounded and does not r
 
 ```text
 Use product-specification to turn these discovery findings into a feature spec.
-Use the Product Cabinet feature specification template and leave unsupported details
-as explicit open decisions.
+Follow the Product Cabinet feature specification template strictly. Put unsupported
+product details in its assumptions/questions section, not a new open-decisions section.
 ```
 
 ```text
@@ -283,18 +283,16 @@ The Product CEO follows explicit user constraints unless they conflict with requ
 
 ## Expected output
 
-A Product CEO response should make the operating process visible without exposing private reasoning:
+A feature specification is a concise product document, not a cabinet report:
 
-- decision or completed artifact
-- selected capabilities and why they were needed
-- evidence examined
-- assumptions and missing evidence
-- tradeoffs and rejected alternatives
-- material specialist disagreements
-- board decision and dissent, when applicable
-- required human approvals
-- next actions, owners, success measures, and revisit conditions
+- Follow the template's heading names, levels, and order, filling placeholders and adjusting numbered scenario/feature entries as needed.
+- Describe user stories, journeys, and observable GUI, CLI, declarative-artifact, or general API experiences where relevant.
+- Keep product dependencies, risks, and unknowns in the existing template sections.
+- Do not add cabinet decisions, staffing, specialist reports, technical evaluations, review verdicts, or extra sections and appendices.
 
+The agent chat response links to the specification or clearly separates an inline document from a short summary of material cabinet findings, unresolved blockers, required approvals, and review limitations. Detailed architecture, delivery plans, or governance reports are separate deliverables only when requested.
+
+The same separation applies whether `product-specification` is invoked directly or through `product-ceo`.
 ## Recommended first run
 
 Test the pack with a bounded feature specification before using it for a portfolio or launch decision:
@@ -307,9 +305,11 @@ Before drafting:
 2. Select the minimum sufficient Product Cabinet skills.
 3. Explain which skills you will apply directly and which need isolated agents.
 
-Use the Product Cabinet feature specification template. Include measurable acceptance
-criteria, success measures, rollout learning, and open decisions. Finish with a
-quality-review of the specification.
+Follow the Product Cabinet feature specification template strictly. Focus on user
+stories and the observable experience of creating, saving, and reusing a dashboard view.
+Put measurable outcomes and open product questions in the relevant existing sections.
+Finish with a quality-review; keep its verdict and the cabinet findings in a brief
+chat summary, not in the specification.
 ```
 
 ## Skill format

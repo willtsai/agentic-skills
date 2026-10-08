@@ -27,6 +27,8 @@ Own HOW the system can satisfy approved product intent. Do not redefine the prod
 8. Distinguish verified repository facts from inferred or proposed design.
 9. Return unresolved product decisions to `product-specification`; do not decide them implicitly.
 
+When supporting a feature specification, return technical analysis to the orchestrator as review input, not spec content. Identify the concise product implications separately: affected user journeys, public interface constraints, availability, or unresolved scope questions. Keep implementation options, feasibility verdicts, internal contracts, and migration mechanics outside the specification.
+
 ## Output
 
 ### Feasibility verdict

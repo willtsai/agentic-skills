@@ -28,6 +28,7 @@ evidence:
 
 output:
   format: <expected structure>
+  destination: <artifact or specialist response in chat>
   acceptance_checks: []
 
 escalation:
@@ -46,7 +47,7 @@ escalation:
 
 ## Specialist response contract
 
-Every specialist response should contain:
+For specialist analysis, return the following to the orchestrator, not inside the requested product artifact:
 
 1. **Executive finding** — the answer in direct terms.
 2. **Evidence** — verified facts and their sources.
@@ -55,3 +56,5 @@ Every specialist response should contain:
 5. **Recommendation** — action and rationale.
 6. **Open questions** — evidence still needed.
 7. **Confidence** — high, medium, or low with a reason.
+
+When the assignment produces a feature specification, its template takes precedence over this response format. Return the specification separately and summarize material findings in chat. Do not prepend or append this reporting structure to the specification. Architecture, board, and quality reports remain review inputs; only their product implications belong in the spec.

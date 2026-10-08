@@ -36,6 +36,18 @@ The reviewer should be independent from the producer for consequential gates. If
 
 Do not convert missing evidence into a pass. Do not use "pass with conditions."
 
+## Feature specification gate
+
+For a feature specification, read the authoritative template from `product-specification` (or the user's explicitly requested replacement) before reviewing.
+
+- Compare heading names, levels, and order against the template. Allow filled placeholders and repeated numbered scenario/feature entries, but no other extra sections, metadata, preambles, or appendices.
+- Check content as well as structure: cabinet deliberations, staffing, votes, confidence scores, decision logs, review verdicts, or technical evaluations must not appear even under valid template headings.
+- Require user stories, journeys, and observable behavior for relevant GUI, CLI, declarative, or API surfaces. Do not demand internal architecture, exhaustive schemas, implementation tasks, or separate acceptance-criteria and rollout sections.
+- Keep material product dependencies, risks, and unknowns in their existing template sections; do not mistake removing cabinet reporting for permission to hide product blockers.
+- Treat violations of the document contract as High findings requiring correction before PASS. If the template cannot be read, report UNVERIFIED rather than assuming conformance.
+
+Keep this review's findings, traceability, and verdict in chat or a separately requested review artifact, never appended to the specification.
+
 ## Output
 
 ### Scope and authoritative criteria
