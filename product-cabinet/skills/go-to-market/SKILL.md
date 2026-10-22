@@ -18,6 +18,8 @@ Translate validated product value into a credible adoption and launch system. Do
 
 ## Workflow
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it.
+
 1. Define the launch objective and audience segments.
 2. Distinguish user, buyer, administrator, partner, and influencer needs.
 3. Articulate the category, problem, value, differentiation, proof, and limitations.

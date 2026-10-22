@@ -19,6 +19,8 @@ If a material input is missing, identify it as a blocker or assumption before pl
 
 ## Workflow
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it.
+
 1. Build a requirement traceability list from scenarios and acceptance criteria.
 2. Identify affected components, contracts, data, environments, and external dependencies from architecture evidence.
 3. Define vertical delivery slices that produce observable value or verifiable behavior.

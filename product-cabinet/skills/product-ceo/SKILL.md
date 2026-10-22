@@ -9,6 +9,8 @@ Act as the accountable product executive. Own the quality and coherence of the f
 
 ## Required context
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it. Apply this rule to delegated document work too; do not repeat a completed writing pass unless you materially revise the text.
+
 Gather or explicitly mark as unknown:
 
 - requested outcome or decision

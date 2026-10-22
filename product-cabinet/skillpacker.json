@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "product-cabinet-external-skills",
+  "version": "0.1.0",
+  "skills": [],
+  "dependencies": {
+    "classic-style": {
+      "source": {
+        "type": "git",
+        "url": "https://github.com/ryanwaite/copilot-skills.git",
+        "ref": "c0384a441f5eb3e926a858b1917b13cfa7c0a3e1"
+      },
+      "package": {
+        "skills": ["classic-style"],
+        "notices": ["LICENSE"]
+      }
+    }
+  }
+}

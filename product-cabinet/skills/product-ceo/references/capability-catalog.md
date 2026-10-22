@@ -2,6 +2,8 @@
 
 Use this catalog to select the minimum sufficient team for a request. Do not invoke every capability by default.
 
+`classic-style` is a required writing dependency, not an optional cabinet seat. Every document-authoring capability uses it after drafting and before final validation, including when invoked directly. Request "keep my structure; output only" and preserve evidence qualifications and the artifact's contract. Under Claude Code, select the bundled `product-cabinet:classic-style` when namespacing is needed; do not accidentally use a different installed copy.
+
 | Capability | Invoke when | Typical output | Prefer an isolated agent when |
 |---|---|---|---|
 | `customer-discovery` | The user, problem, demand, alternatives, or evidence is uncertain | Research brief, evidence map, assumptions, learning plan | Research spans many sources or independence from the proposal matters |

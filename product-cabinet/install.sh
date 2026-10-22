@@ -6,7 +6,7 @@
 #   ./install.sh [--force] [skill ...]
 #
 # With no skill names, installs every Product Cabinet skill. Name one or more
-# skills to install only those skills.
+# skills to install those skills plus the required classic-style dependency.
 #
 # Options:
 #   --force              Overwrite existing installed copies
@@ -53,6 +53,14 @@ done
 
 if [ "${#REQUESTED[@]}" -eq 0 ]; then
   REQUESTED=("${ALL_SKILLS[@]}")
+fi
+
+HAS_CLASSIC_STYLE=0
+for skill in "${REQUESTED[@]}"; do
+  if [ "$skill" = "classic-style" ]; then HAS_CLASSIC_STYLE=1; fi
+done
+if [ "$HAS_CLASSIC_STYLE" -eq 0 ]; then
+  REQUESTED+=("classic-style")
 fi
 
 for skill in "${REQUESTED[@]}"; do

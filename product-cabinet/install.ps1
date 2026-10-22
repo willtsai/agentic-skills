@@ -3,8 +3,8 @@
 Installs Product Cabinet skills for GitHub Copilot.
 
 .DESCRIPTION
-Installs every Product Cabinet skill by default, or only the skill names
-provided as positional arguments.
+Installs every Product Cabinet skill by default, or the skill names
+provided as positional arguments plus the required classic-style dependency.
 
 .PARAMETER Force
 Overwrites existing installed copies.
@@ -60,6 +60,10 @@ $availableSkills = @(
 
 if (-not $Skills -or $Skills.Count -eq 0) {
     $Skills = $availableSkills
+}
+
+if ($Skills -notcontains "classic-style") {
+    $Skills = @($Skills) + "classic-style"
 }
 
 foreach ($skill in $Skills) {

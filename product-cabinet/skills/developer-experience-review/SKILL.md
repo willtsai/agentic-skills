@@ -18,6 +18,8 @@ Evaluate the complete developer journey from discovery to successful production 
 
 ## Workflow
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it.
+
 1. Identify the primary developer journeys and prerequisites.
 2. Walk discovery, evaluation, setup, first success, debugging, deployment, operation, upgrade, and removal.
 3. Evaluate conceptual clarity, naming, consistency, discoverability, defaults, and progressive complexity.

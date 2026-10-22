@@ -1,0 +1,63 @@
+{
+  "lockVersion": 1,
+  "packages": {
+    "classic-style": {
+      "integrity": "sha256:616a0f4b7ff599219f888d9cb5e3ecc8ba44fb5af86085807640d23bdbd385a2",
+      "manifest": {
+        "dependencies": {},
+        "name": "classic-style",
+        "notices": [
+          "LICENSE"
+        ],
+        "skills": [
+          "classic-style"
+        ],
+        "version": null
+      },
+      "package": {
+        "dependencies": {},
+        "notices": [
+          "LICENSE"
+        ],
+        "skills": [
+          "classic-style"
+        ]
+      },
+      "revision": "c0384a441f5eb3e926a858b1917b13cfa7c0a3e1",
+      "source": {
+        "ref": "c0384a441f5eb3e926a858b1917b13cfa7c0a3e1",
+        "subdir": "",
+        "type": "git",
+        "url": "https://github.com/ryanwaite/copilot-skills.git"
+      }
+    }
+  },
+  "root": {
+    "integrity": "sha256:5b2ab62e179a0055a355dea1a71a73c18f380fab484778c7305cde8a86eba685",
+    "manifest": {
+      "dependencies": {
+        "classic-style": {
+          "package": {
+            "dependencies": {},
+            "notices": [
+              "LICENSE"
+            ],
+            "skills": [
+              "classic-style"
+            ]
+          },
+          "source": {
+            "ref": "c0384a441f5eb3e926a858b1917b13cfa7c0a3e1",
+            "subdir": "",
+            "type": "git",
+            "url": "https://github.com/ryanwaite/copilot-skills.git"
+          }
+        }
+      },
+      "name": "product-cabinet-external-skills",
+      "notices": [],
+      "skills": [],
+      "version": "0.1.0"
+    }
+  }
+}

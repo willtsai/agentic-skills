@@ -9,6 +9,8 @@ Define WHAT outcome and behavior the product must provide. Do not prescribe impl
 
 ## Document contract
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it.
+
 The specification is a product artifact, not a report of the cabinet's work. This contract applies both when invoked directly and when delegated by `product-ceo`.
 
 - Use `references/feature-spec-template.md` as the authoritative structure unless the user explicitly supplies or requests another template.

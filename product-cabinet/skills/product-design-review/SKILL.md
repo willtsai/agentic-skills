@@ -18,6 +18,8 @@ Own the user's interaction experience. Evaluate what users see, understand, and 
 
 ## Workflow
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it.
+
 1. Identify the critical user journeys and desired outcomes.
 2. Walk each journey from entry through success, cancellation, error, and recovery.
 3. Review information hierarchy, terminology, navigation, and progressive disclosure.

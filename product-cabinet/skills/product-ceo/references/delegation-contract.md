@@ -44,6 +44,7 @@ escalation:
 - State what the specialist must not decide.
 - Do not treat a time or tool limitation as evidence that no issue exists.
 - Require specialists to return unresolved questions and confidence, not false certainty.
+- For document assignments, require the bundled `classic-style` writing pass after drafting and before validation. Pass "keep my structure; output only" and protect template headings, facts, evidence qualifications, decisions, and code examples. Keep style commentary out of the artifact. Have the specialist report completion or a missing dependency in chat so the CEO does not repeat a completed pass.
 
 ## Specialist response contract
 

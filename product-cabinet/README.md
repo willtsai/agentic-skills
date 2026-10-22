@@ -112,11 +112,11 @@ On Windows PowerShell:
 
 Both scripts:
 
-- install all ten skills by default
+- install all ten cabinet skills and the bundled `classic-style` writing dependency by default
 - copy each complete skill directory, including its references and templates
 - install to `~/.copilot/skills` by default
 - refuse to overwrite an existing skill unless explicitly forced
-- accept one or more skill names for a partial installation
+- accept one or more skill names for a partial installation and include `classic-style` automatically
 
 Install selected skills:
 
@@ -151,6 +151,11 @@ $env:COPILOT_SKILLS_DIR = "$HOME/custom-skills"
 
 Restart Copilot CLI or reload the agent host after installation.
 
+Selective installations include the bundled writing dependency and its license.
+If `classic-style` already exists in your target directory, the installer preserves
+it unless you pass `--force` or `-Force`. Review or back up a customized copy before
+replacing it; use a separate target directory if you need to retain another version.
+
 ### Updating or uninstalling
 
 For a marketplace installation, use the host's plugin manager to refresh, update, disable, or uninstall Product Cabinet.
@@ -159,7 +164,10 @@ For a manual installation, pull the latest repository changes and rerun the appr
 
 ### Compatibility notes
 
-Marketplace manifests are host-specific distribution adapters. The skills themselves use portable `SKILL.md` files, and every skill keeps its required references and templates inside its own directory so manual installation remains self-contained.
+Marketplace manifests are host-specific distribution adapters. The skills use
+portable `SKILL.md` files. Each skill keeps its references and templates in its own
+directory, and the installers also include the required `classic-style` sibling.
+Do not copy a cabinet skill alone without its writing dependency.
 
 ## Initial skills
 
@@ -175,6 +183,32 @@ Marketplace manifests are host-specific distribution adapters. The skills themse
 | `go-to-market` | Develop positioning, launch strategy, channels, enablement, readiness, and measurement |
 | `developer-experience-review` | Review developer-facing products for usability, consistency, documentation, and adoption friction |
 | `board-review` | Independently challenge material proposals and record decisions, conditions, risks, and dissent |
+
+### Required writing skill
+
+[classic-style](./skills/classic-style/SKILL.md) is bundled from
+[ryanwaite/copilot-skills](https://github.com/ryanwaite/copilot-skills/tree/main/classic-style).
+It is a writing dependency, not another cabinet role. Marketplace users receive it
+with Product Cabinet; there is no second plugin to install or runtime download.
+
+Every cabinet skill uses it when authoring or revising a document, whether invoked
+directly or through the Product CEO. The workflow is:
+
+1. Draft the document from verified inputs and the role's required structure.
+2. Invoke the bundled `classic-style` with **keep my structure; output only**.
+3. Check the resulting document against its template and substantive requirements.
+
+The pass improves prose without changing claims, citations, uncertainty, decisions,
+code examples, or required review fields. It must not turn an assumption into a
+fact. Any writing notes stay in chat; feature specs still contain only the required
+template sections. Reviews apply the writing pass to their own reports, not to an
+artifact they have only been asked to review.
+
+In Claude Code, use `product-cabinet:classic-style` to distinguish the bundled skill
+from other installed copies. If a host cannot invoke skills directly, the cabinet
+skill reads the sibling skill and its reference. If the dependency is missing, it
+reports the problem and asks for installation repair rather than silently skipping
+the writing pass.
 
 ## Operating model
 
@@ -331,6 +365,11 @@ The instructions avoid runtime-specific APIs. Hosts can map phrases such as "inv
 - [Feature specification](./skills/product-specification/references/feature-spec-template.md), adapted from the Radius project template
 - [Board review](./skills/board-review/references/board-review-template.md)
 - [Decision record](./skills/product-ceo/references/decision-record-template.md)
+
+## Contributing
+
+For dependency updates, validation, and release procedures, see
+[CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Principles
 

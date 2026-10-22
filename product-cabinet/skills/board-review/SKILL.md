@@ -82,6 +82,8 @@ A vote count is evidence of board sentiment, not a substitute for synthesis.
 
 ## Output
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it. Preserve each director's opinion and required confidence/verdict fields; a writing pass is not an independent board review.
+
 When reviewing a feature specification, keep this board report separate from the spec. Return it to the orchestrator for a concise chat summary; do not append votes, conditions, dissent, or approval records to the product document. Only resulting product scope, experience constraints, or unresolved product questions may be reflected in the appropriate template sections.
 
 Use `references/board-review-template.md` without omitting:

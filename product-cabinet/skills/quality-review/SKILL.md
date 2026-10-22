@@ -19,6 +19,8 @@ The reviewer should be independent from the producer for consequential gates. If
 
 ## Workflow
 
+When authoring or revising a document, draft its substance, then invoke the bundled `classic-style` skill before final validation. Request **keep my structure; output only**. Preserve the required template, claims, citations, uncertainty, decisions, and code examples; polish prose only. Keep style notes in chat, outside the document. If skill invocation is unavailable, read `../classic-style/SKILL.md` and its reference and apply them directly. If those files are unavailable, report the missing dependency and ask to repair the installation rather than silently skipping it. This applies to the review report, not permission to rewrite the artifact under review.
+
 1. Establish the authoritative criteria and review scope.
 2. Build a traceability matrix from each criterion to evidence.
 3. Inspect the artifact and available evidence.
@@ -44,6 +46,7 @@ For a feature specification, read the authoritative template from `product-speci
 - Check content as well as structure: cabinet deliberations, staffing, votes, confidence scores, decision logs, review verdicts, or technical evaluations must not appear even under valid template headings.
 - Require user stories, journeys, and observable behavior for relevant GUI, CLI, declarative, or API surfaces. Do not demand internal architecture, exhaustive schemas, implementation tasks, or separate acceptance-criteria and rollout sections.
 - Keep material product dependencies, risks, and unknowns in their existing template sections; do not mistake removing cabinet reporting for permission to hide product blockers.
+- Check that the writing pass preserved headings, evidence qualifications, code examples, and product meaning, with no "What changed" section added to the spec. Readable prose alone is not evidence that the pass ran; report any unverified execution.
 - Treat violations of the document contract as High findings requiring correction before PASS. If the template cannot be read, report UNVERIFIED rather than assuming conformance.
 
 Keep this review's findings, traceability, and verdict in chat or a separately requested review artifact, never appended to the specification.
