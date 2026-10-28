@@ -1,0 +1,19 @@
+{
+  "name": "product-cabinet-maintenance",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "skills:version": "skillpacker --version",
+    "build": "node sync-external-skills.mjs",
+    "build:check": "node sync-external-skills.mjs --check",
+    "build:refresh": "node sync-external-skills.mjs --refresh",
+    "test": "node --test tests/distribution.test.mjs tests/bundle.test.mjs tests/pr-sync.test.mjs",
+    "test:offline": "node --test tests/distribution.test.mjs tests/pr-sync.test.mjs"
+  },
+  "devDependencies": {
+    "@willtsai/skillpacker": "0.1.4"
+  }
+}

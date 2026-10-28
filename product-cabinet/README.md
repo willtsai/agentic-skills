@@ -369,7 +369,10 @@ The instructions avoid runtime-specific APIs. Hosts can map phrases such as "inv
 ## Contributing
 
 For dependency updates, validation, and release procedures, see
-[CONTRIBUTING.md](./CONTRIBUTING.md).
+[CONTRIBUTING.md](./CONTRIBUTING.md). Maintainer builds use the pinned, published
+Skillpacker npm package; GitHub Actions checks frozen bundles and distribution tests.
+Manifest-change PRs from this repository also receive generated dependency updates
+on the same PR branch.
 
 ## Principles
 

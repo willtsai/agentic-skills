@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { cp, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -71,24 +71,12 @@ test("vendored content and license match Skillpacker's pinned integrity", async 
   assert.match(await read("skills/classic-style/.skillpacker/notices/LICENSE"), /Copyright \(c\) 2026 Ryan Waite/);
 });
 
-test("frozen sync is checkout-independent, detects drift, and restores the dependency", {
-  skip: !process.env.SKILLPACKER_CLI && "Set SKILLPACKER_CLI to run the networked bundling test"
-}, async t => {
-  const temporary = await mkdtemp(path.join(tmpdir(), "cabinet-sync-test-"));
-  t.after(() => rm(temporary, { recursive: true, force: true }));
-  const checkout = path.join(temporary, "product-cabinet");
-  await cp(root, checkout, { recursive: true });
-  const run = (...args) => exec(process.execPath, [
-    path.join(checkout, "maintenance/sync-external-skills.mjs"),
-    "--skillpacker", path.resolve(process.env.SKILLPACKER_CLI), ...args
-  ]);
-  await run("--check");
-  const file = path.join(checkout, "skills/classic-style/SKILL.md");
-  await writeFile(file, "Edited vendor content");
-  await assert.rejects(run("--check"), /Vendored content differs/);
-  await run();
-  assert.equal(await readFile(file, "utf8"), await read("skills/classic-style/SKILL.md"));
-  await run("--check");
+test("sync CLI documents the packaged default and rejects conflicting modes", async () => {
+  const script = path.join(root, "maintenance/sync-external-skills.mjs");
+  const { stdout } = await exec(process.execPath, [script, "--help"]);
+  assert.match(stdout, /installed @willtsai\/skillpacker package by default/);
+  await assert.rejects(exec(process.execPath, [script, "--check", "--refresh"]),
+    /--refresh and --check cannot be combined/);
 });
 
 test("marketplace sources include the dependency and plugin versions agree", async () => {

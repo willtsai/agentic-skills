@@ -1,0 +1,56 @@
+name: Sync Product Cabinet dependencies
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - "product-cabinet/skillpacker.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: product-cabinet-sync-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref != 'main' &&
+      github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: read
+      actions: write
+    defaults:
+      run:
+        working-directory: product-cabinet/maintenance
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: product-cabinet/maintenance/package-lock.json
+      - run: npm ci --include=dev --ignore-scripts
+      - name: Refresh the dependencies declared by the PR
+        run: npm run build:refresh
+      - name: Verify the regenerated distribution
+        run: |
+          npm run build:check
+          bash --version
+          pwsh -NoProfile -Command '$PSVersionTable.PSVersion.ToString()'
+          npm test
+      - name: Commit generated files to the PR and dispatch validation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: node commit-dependency-update.mjs

@@ -1,0 +1,52 @@
+name: Product Cabinet
+
+on:
+  pull_request:
+    paths:
+      - "product-cabinet/**"
+      - ".github/plugin/marketplace.json"
+      - ".claude-plugin/marketplace.json"
+      - ".github/workflows/product-cabinet.yml"
+      - ".github/workflows/product-cabinet-sync.yml"
+  push:
+    branches: [main]
+    paths:
+      - "product-cabinet/**"
+      - ".github/plugin/marketplace.json"
+      - ".claude-plugin/marketplace.json"
+      - ".github/workflows/product-cabinet.yml"
+      - ".github/workflows/product-cabinet-sync.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: product-cabinet-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: product-cabinet/maintenance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: product-cabinet/maintenance/package-lock.json
+      - name: Install pinned build tooling
+        run: npm ci --include=dev --ignore-scripts
+      - run: npm run skills:version
+      - name: Check frozen bundle and provenance
+        run: npm run build:check
+      - name: Verify installer test shells
+        run: |
+          bash --version
+          pwsh -NoProfile -Command '$PSVersionTable.PSVersion.ToString()'
+      - name: Test bundle drift detection, repair, and installers
+        run: npm test
